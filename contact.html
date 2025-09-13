@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - GameVerse</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: #0f0f0f;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .contact-section {
+      padding: 60px 0;
+    }
+    .form-control {
+      background: #222;
+      border: 1px solid #444;
+      color: #fff;
+    }
+    .form-control:focus {
+      border-color: #ffc107;
+      box-shadow: 0 0 10px rgba(255,193,7,0.5);
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      border-radius: 10px;
+    }
+    .team-card {
+      background: #1a1a1a;
+      color: white;
+      border: none;
+      transition: transform 0.3s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 15px rgba(255,193,7,0.4);
+    }
+    .social-icons a {
+      color: #ffc107;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      color: white;
+    }
+        
+    .footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.footer .footer-top {
+  padding-top: 50px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
+  color: var(--heading-color);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: var(--heading-font);
+}
+
+.footer .footer-about p {
+  font-size: 14px;
+  font-family: var(--heading-font);
+}
+
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul i {
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul a {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--accent-color);
+}
+
+.footer .footer-contact p {
+  margin-bottom: 5px;
+}
+
+.footer .copyright {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 6px;
+  font-size: 13px;
+}
+.footer {
+        background: #000;
+        color: #fff;
+        padding: 60px 0;
+      }
+  </style>
+</head>
+<body>
+
+<!-- Contact Section -->
+<section class="contact-section container" id="contact">
+  <div class="text-center mb-5" data-aos="fade-up">
+    <h2 class="display-5 fw-bold text-warning">Get in Touch with GameVerse</h2>
+    <p>We're here to assist you. Reach out to us anytime!</p>
+  </div>
+
+  <!-- Embedded Map -->
+  <div class="map-container mb-5" data-aos="fade-up" data-aos-delay="100">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9066.223046182392!2d-0.12775803747309858!3d51.50732189336347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b327b1827c5%3A0x9274c6378c49a3f0!2sLondon!5e0!3m2!1sen!2suk!4v1689818284531!5m2!1sen!2suk" allowfullscreen></iframe>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="row mb-5" data-aos="fade-up" data-aos-delay="200">
+    <div class="col-lg-8 mx-auto">
+      <form id="contactForm" class="p-4 rounded bg-dark shadow-lg">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name*</label>
+          <input type="text" class="form-control" id="name" placeholder="Your name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email*</label>
+          <input type="email" class="form-control" id="email" placeholder="Your email">
+        </div>
+        <div class="mb-3">
+          <label for="subject" class="form-label">Subject*</label>
+          <input type="text" class="form-control" id="subject" placeholder="Subject">
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message*</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Your message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-warning w-100">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Team Section -->
+  <div class="text-center mb-4" data-aos="fade-up"><h3 class="text-warning">Our Most Popular Games</h3></div>
+  <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="300">
+    <div class="col-md-4">
+      <div class="card team-card text-center p-3">
+        <img src="images (1).jpeg" class="rounded-circle mx-auto mt-3" width="100" height="100" alt="Support 1">
+        <div class="card-body">
+          <h5 class="card-title">RDR 2</h5>
+          <p class="card-text">Adventure Game<br>Game Maker: Abra ka dabra</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card team-card text-center p-3">
+        <img src="gtav-featured.webp" class="rounded-circle mx-auto mt-3" width="100" height="100" alt="Support 2">
+        <div class="card-body">
+          <h5 class="card-title">GTA V</h5>
+          <p class="card-text">Action Game<br>Game Maker: Jhinga lala</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Media -->
+  <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+    <h4>Follow Us</h4>
+    <div class="social-icons mt-3">
+      <a href="#"><i class="fab fa-discord"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitch"></i></a>
+    </div>
+  </div>
+</section>
+
+
+<footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-" style="text-decoration: none;">
+            <span class="sitename" style="color: #fffc00; ">GameVerse</span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>A108 Adam Street</p>
+          <p>New York, NY 535022</p>
+          <p>United States</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+          <p><strong>Email:</strong> <span>info@example.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">GameVerse</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/" style="color: #fffc00;">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+
+
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Get form values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !subject || !message) {
+      alert("❌ Please fill in all fields.");
+      return;
+    }
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+      alert("❌ Please enter a valid email address.");
+      return;
+    }
+
+    alert("✅ Message sent successfully! We'll get back to you soon.");
+    document.getElementById("contactForm").reset();
+  });
+</script>
+</body>
+</html>

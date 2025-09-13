@@ -1,0 +1,639 @@
+<!-- Updated version with user reviews and tooltips -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameVerse - Category</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #0f0f0f;
+        color: #f0f0f0;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .dark-mode {
+        background-color: #ffffff;
+        color: #111;
+      }
+
+      .btn-filter.active,
+      .btn-filter:hover {
+        background: linear-gradient(to right, #ffcc00, #ff9900);
+        color: #111;
+        border: none;
+      }
+
+      .game-card {
+        transition: transform 0.4s ease;
+      }
+
+      .game-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px #ffc10733;
+      }
+
+      .badge {
+        font-size: 0.75rem;
+        margin-right: 5px;
+      }
+
+      .category-title {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 2rem;
+        animation: fadeIn 1s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .ripple-effect {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ripple-effect:after {
+        content: "";
+        position: absolute;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 100%;
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+      }
+
+      @keyframes ripple {
+        to {
+          transform: scale(3);
+          opacity: 0;
+        }
+      }
+
+      #searchInput {
+        max-width: 300px;
+        margin-left: auto;
+      }
+
+      .review-text {
+        font-size: 0.875rem;
+        font-style: italic;
+        color: #ccc;
+        margin-top: 10px;
+      }
+      .navbar {
+        background: linear-gradient(135deg, #171717, #39383a, #1d191c);
+      }
+      .alk {
+        background: linear-gradient(to left, #fffc00, #fffb0087);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .explore-more {
+        background: #111;
+        color: #fff;
+        padding: 60px 0;
+      }
+      .explore-more .card {
+        background: #222;
+        color: #fff;
+        transition: transform 0.3s ease;
+      }
+      .explore-more .card:hover {
+        transform: scale(1.05);
+      }
+    
+      .footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.footer .footer-top {
+  padding-top: 50px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
+  color: var(--heading-color);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: var(--heading-font);
+}
+
+.footer .footer-about p {
+  font-size: 14px;
+  font-family: var(--heading-font);
+}
+
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul i {
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul a {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--accent-color);
+}
+
+.footer .footer-contact p {
+  margin-bottom: 5px;
+}
+
+.footer .copyright {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 6px;
+  font-size: 13px;
+}
+.footer {
+        background: #000;
+        color: #fff;
+        padding: 60px 0;
+      }
+      .features,
+      .parallax {
+        background: #1a1a1a;
+        color: #fff;
+      }
+      .parallax {
+        background: url("360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg")
+          fixed center/cover;
+          padding-top: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand alk" style="font-size: 23px" href="#"
+          >🎮 GameVerse</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="input d-flex flex-grow-1 p-2">
+            <input
+              style="
+                background-color: rgb(24, 23, 23);
+                border: 1px solid white;
+                color: white;
+              "
+              type="search"
+              class="d-flex flex-grow-1 rounded-3 px-2 py-2"
+              placeholder="Search Game Here"
+            />
+          </div>
+
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/index.html" target="_blank">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #fffc00" href="categories.html"
+                >Categories</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="contact.html" target="_blank">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#explore">Explore</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-5">
+      <h2 class="category-title">🎮 Explore Game Categories</h2>
+      <div class="row mb-4 align-items-center">
+        <div class="col-md-7 d-flex flex-wrap gap-2">
+          <button
+            class="btn btn-outline-warning btn-filter active"
+            onclick="filterGames('all')"
+          >
+            All
+          </button>
+          <button
+            class="btn btn-outline-warning btn-filter"
+            onclick="filterGames('RPG')"
+          >
+            RPG
+          </button>
+          <button
+            class="btn btn-outline-warning btn-filter"
+            onclick="filterGames('Action')"
+          >
+            Action
+          </button>
+          <button
+            class="btn btn-outline-warning btn-filter"
+            onclick="filterGames('Adventure')"
+          >
+            Adventure
+          </button>
+        </div>
+        <div class="col-md-5 d-flex justify-content-end gap-2 mt-3 mt-md-0">
+          <select id="sortOptions" class="form-select" onchange="sortGames()">
+            <option value="popularity">Sort by Popularity</option>
+            <option value="newest">Sort by Newest</option>
+            <option value="rating">Sort by Ratings</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row" id="gameContainer">
+        <!-- Cards dynamically here -->
+      </div>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-warning ripple-effect" onclick="loadMoreGames()">
+          ⬇️ Load More
+        </button>
+        <button class="btn btn-outline-light ms-3" onclick="toggleDarkMode()">
+          🌓 Toggle Theme
+        </button>
+      </div>
+    </div>
+    <section class="container py-5" id="explore">
+        <h2 class="text-center mb-4" data-aos="fade-up">Popular Games</h2>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="zoom-in">
+            <div class="card game-card bg-dark text-white">
+              <img
+                src="racing-master-img-1-1920x1080-e5d0a6bbc96f.avif"
+                class="card-img-top"
+                alt="Game 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Racing is Here</h5>
+                <p class="badge bg-danger">Adventure</p>
+                <p class="text-white">⭐⭐⭐⭐ 4.8</p>
+                <a href="#" class="btn btn-outline-light btn-sm">Play Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="zoom-in">
+            <div class="card game-card bg-dark text-white">
+              <img
+                src="f26fc9e1b11ce01369966ed9225e320a293c4eaad1329774f125e05629ffd437.avif"
+                class="card-img-top"
+                alt="Game 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Fortnite</h5>
+                <p class="badge bg-success">Action</p>
+                <p class="text-white">⭐⭐⭐⭐ 4.8</p>
+                <a href="#" class="btn btn-outline-light btn-sm">Play Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="zoom-in">
+            <div class="card game-card bg-dark text-white">
+              <img src="gtav-featured.webp" class="card-img-top" alt="Game 1" />
+              <div class="card-body">
+                <h5 class="card-title">GTA V</h5>
+                <p class="badge bg-info">Action</p>
+                <p class="text-white">⭐⭐⭐⭐⭐ 5</p>
+                <a href="#" class="btn btn-outline-light btn-sm">Play Now</a>
+              </div>
+            </div>
+          </div>
+</div>
+    </section>
+    <section class="parallax text-center text-white">
+        <div class="container" data-aos="fade-up">
+          <h2 class="display-5">Experience Games Like Never Before</h2>
+          <p class="lead">
+            Immersive visuals, seamless controls, and epic adventures await.
+          </p>
+        </div>
+      </section>
+      <footer id="footer" class="footer">
+
+        <div class="container footer-top">
+          <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 footer-about">
+              <a href="index.html" class="logo d-flex align-items-" style="text-decoration: none;">
+                <span class="sitename" style="color: #fffc00; ">GameVerse</span>
+              </a>
+              <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+              <div class="social-links d-flex mt-4">
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+    
+            <div class="col-lg-2 col-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Terms of service</a></li>
+                <li><a href="#">Privacy policy</a></li>
+              </ul>
+            </div>
+    
+            <div class="col-lg-2 col-6 footer-links">
+              <h4>Our Services</h4>
+              <ul>
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Product Management</a></li>
+                <li><a href="#">Marketing</a></li>
+                <li><a href="#">Graphic Design</a></li>
+              </ul>
+            </div>
+    
+            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+              <h4>Contact Us</h4>
+              <p>A108 Adam Street</p>
+              <p>New York, NY 535022</p>
+              <p>United States</p>
+              <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+              <p><strong>Email:</strong> <span>info@example.com</span></p>
+            </div>
+    
+          </div>
+        </div>
+    
+        <div class="container copyright text-center mt-4">
+          <p>© <span>Copyright</span> <strong class="px-1 sitename">GameVerse</strong> <span>All Rights Reserved</span></p>
+          <div class="credits">
+            Designed by <a href="https://bootstrapmade.com/" style="color: #fffc00;">BootstrapMade</a>
+          </div>
+        </div>
+    
+      </footer>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      const games = [
+        {
+          title: "Cyber Shootout",
+          category: "FPS",
+          rating: 4.5,
+          popularity: 92,
+          newest: 2023,
+          badges: ["Multiplayer", "Online"],
+          review: "Fast-paced action with stunning visuals!",
+          image: "1000002644.webp",
+        },
+        {
+            title: "Mystic Legends",
+            category: "RPG",
+            rating: 4.8,
+            popularity: 85,
+          newest: 2022,
+          badges: ["Story Mode", "Offline"],
+          review: "An epic tale of magic and mystery.",
+          image: "mystic-munich-legends-of-the-old-town.jpg",
+        },
+        {
+          title: "GTA San Andreas",
+          category: "Action",
+          rating: 4.8,
+          popularity: 95,
+          newest: 2004,
+          badges: ["Open World", "Offline", "Classic"],
+          review:
+            "An iconic open-world game filled with crime, chaos, and unforgettable missions.",
+          image:
+            "2151133-2880x1800-desktop-hd-gta-san-andreas-background-image.jpg",
+        },
+
+        {
+          title: "Red Dead Redemption 2",
+          category: "RPG",
+          rating: 4.9,
+          popularity: 98,
+          newest: 2018,
+          badges: ["Open World", "Story-Rich", "Offline"],
+          review:
+            "A cinematic wild west journey with breathtaking visuals and emotional storytelling.",
+          image: "red-dead-redemption-2-characters-uhd-4k-wallpaper.jpg",
+        },
+        {
+          title: "Counter-Strike 2",
+          category: "FPS",
+          rating: 4.6,
+          popularity: 92,
+          newest: 2023,
+          badges: ["Multiplayer", "Online", "Tactical"],
+          review:
+            "The next generation of tactical shooting, refined with stunning visuals and smooth gameplay.",
+          image: "capsule_616x353.jpg",
+        },
+        {
+          title: "Cyber Shootout",
+          category: "FPS",
+          rating: 4.5,
+          popularity: 92,
+          newest: 2023,
+          badges: ["Multiplayer", "Online"],
+          review: "Fast-paced action with stunning visuals!",
+          image: "1000002644.webp",
+        },
+      ];
+      
+      let loaded = 0;
+      const batch = games.length + 1    ;
+
+      function renderGames() {
+        const container = document.getElementById("gameContainer");
+        for (let i = loaded; i < loaded + batch && i < games.length; i++) {
+          const game = games[i];
+          const col = document.createElement("div");
+          col.className = `col-md-4 mb-4 game-card`;
+          col.setAttribute("data-category", game.category);
+          col.setAttribute("data-rating", game.rating);
+          col.setAttribute("data-popularity", game.popularity);
+          col.setAttribute("data-newest", game.newest);
+          col.setAttribute("data-aos", "zoom-in");
+          col.innerHTML = `
+          <div class="card bg-dark text-white h-100" data-bs-toggle="tooltip" title="${
+            game.review
+          }">
+            <img src="${game.image}" class="card-img-top"  alt="${
+            game.title
+          }" style="max-height:300px;min-height:300px;object-fit:cover;">
+            <div class="card-body">
+              <h5 class="card-title">${game.title}</h5>
+              <p>${game.badges
+                .map(
+                  (b) =>
+                    `<span class='badge bg-warning text-dark me-1'>${b}</span>`
+                )
+                .join("")}</p>
+              <p>⭐ ${game.rating}</p>
+              <p class="review-text">“${game.review}”</p>
+            </div>
+          </div>`;
+          container.appendChild(col);
+        }
+        loaded += batch;
+        AOS.refresh();
+        const tooltipTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        );
+        tooltipTriggerList.map((t) => new bootstrap.Tooltip(t));
+      }
+
+      function filterGames(category) {
+        document
+          .querySelectorAll(".btn-filter")
+          .forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+        document.querySelectorAll(".game-card").forEach((card) => {
+          card.style.display =
+            category === "all" || card.dataset.category === category
+              ? "block"
+              : "none";
+        });
+      }
+
+      function sortGames() {
+        const option = document.getElementById("sortOptions").value;
+        const cards = [...document.querySelectorAll(".game-card")];
+        const container = document.getElementById("gameContainer");
+        cards.sort(
+          (a, b) =>
+            parseFloat(b.dataset[option]) - parseFloat(a.dataset[option])
+        );
+        container.innerHTML = "";
+        cards.forEach((card) => container.appendChild(card));
+      }
+
+      function searchGames() {
+        const input = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        document.querySelectorAll(".game-card").forEach((card) => {
+          const title = card
+            .querySelector(".card-title")
+            .textContent.toLowerCase();
+          card.style.display = title.includes(input) ? "block" : "none";
+        });
+      }
+
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+
+      function loadMoreGames() {
+        if (loaded < games.length) renderGames();
+      }
+
+      renderGames();
+    </script>
+  </body>
+</html>

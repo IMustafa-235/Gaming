@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Animation</title>
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  
+  <style>
+.cards{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 700px;
+}
+.one{
+    background-color: aqua;
+    width: 350px;
+    height: 300px;
+}
+  </style>
+</head>
+<body>
+    <div class="cards">
+        <div class="one" data-aos="fade-up" data-aos-delay="150">phela</div>
+        <div class="one" data-aos="fade-up" data-aos-delay="150">dosra</div>
+        <div class="one" data-aos="fade-up" data-aos-delay="150">teesra</div>
+        <div class="one"data-aos="fade-up" data-aos-delay="150">chauta</div>
+    </div>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
